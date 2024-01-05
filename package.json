@@ -1,0 +1,13 @@
+{
+  "name": "frontend_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "npx webpack --mode=development",
+    "build:prod": "npx webpack --mode=production"
+  },
+  "author": "",
+  "license": "ISC"
+}
