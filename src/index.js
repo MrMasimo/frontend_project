@@ -1,4 +1,11 @@
-import "./style.css";
+import './style.css';
 
-const num = 5;
-console.log(num);
+const f = (num) => {
+    if (num === 10) {
+        console.log('Ровно 10');
+    } else {
+        console.log('Не ровно 10');
+    }
+};
+
+f();

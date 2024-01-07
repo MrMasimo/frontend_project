@@ -25,5 +25,7 @@ module.exports = {
             },
             { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }
         ]
-    }
+    },
+    devServer: { open: true, liveReload: true, static: path.resolve(__dirname, "./src") },
+    target: "web"
 };
