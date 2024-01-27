@@ -4,9 +4,9 @@ function BalanceAccount(user) {
     return account;
 }
 
-let alexAccount = new BalanceAccount('alex');
+let alexAccount = BalanceAccount('alex');
 alexAccount.balance = 200;
-let ivanAccount = new BalanceAccount('ivan');
+let ivanAccount = BalanceAccount('ivan');
 
 console.log(alexAccount, ivanAccount);
 
