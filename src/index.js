@@ -1,36 +1,76 @@
-import "./style.css";
-
 // Task #1
+function BalanceAccount(user) {
+    let account = { name: user, balance: 0 };
+    return account;
+}
 
-const prices = [100, 150, 200, 250];
+let alexAccount = new BalanceAccount('alex');
+alexAccount.balance = 200;
+let ivanAccount = new BalanceAccount('ivan');
 
-let pricesCurr = prices.map((price) => price + " р");
-console.log(pricesCurr);
+console.log(alexAccount, ivanAccount);
 
 // Task #2
 
-const users = [
-    ["alex", 32],
-    ["tomas", 17],
-    ["olga", 14],
-    ["andre", 24]
-];
-let usersUnder18 = users.filter((user) => {
-    if (user[1] > 18) return true;
-});
-console.log(usersUnder18);
+const globalCount = () => {
+    let count = 0;
+    return () => {
+        console.log(count);
+        count++;
+    }
+}
+
+let counter1 = globalCount();
+let counter2 = globalCount();
+
+counter1();
+counter1();
+counter1();
+counter2();
 
 // Task #3
 
-const items = [
-    { title: "пицца", price: 200 },
-    { title: "баранина", price: 300 },
-    { title: "креветки", price: 400 }
-];
+const items = [{
+    type: 'laptop',
+    model: 'HP',
+    price: 700,
+},
+{
+    type: 'laptop',
+    model: 'DELL',
+    price: 350,
+},
+{
+    type: 'phone',
+    model: 'Samsung',
+    price: 900,
+},
+{
+    type: 'phone',
+    model: 'Xiaomi',
+    price: 1000,
+},
+{
+    type: 'phone',
+    model: 'Nokia',
+    price: 200,
+},
+{
+    type: 'phone',
+    model: 'Iphone',
+    price: 1000,
+},
+{
+    type: 'laptop',
+    model: 'MSI',
+    price: 1500,
+}]
 
-let sum = items.reduce((acc, item) => {
-    acc += item.price;
-    return acc;
-}, 0);
 
-console.log(sum);
+let countPhones = items.filter(item => item.type == 'phone').length;
+let allCostLaptop = items.filter(item => item.type == 'laptop').reduce((cost, item) => { cost += item.price; return cost }, 0);
+
+console.log(countPhones, allCostLaptop, items);
+
+let descriptionForDisctountPrice = items.map(item => `${item.type} ${item.model} special price only: ${0.9*item.price}`);
+console.log(descriptionForDisctountPrice);
